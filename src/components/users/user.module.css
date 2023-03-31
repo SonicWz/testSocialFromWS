@@ -1,0 +1,43 @@
+.userWrap{
+    padding: 10px;
+}
+.user{
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 10px 0;
+    position: relative;
+    background: #fff;
+}
+.user:last-child{
+    margin-bottom: 0;
+}
+.userField{
+    font-size: 1.0em;
+}
+.userName{
+    font-size: 1em;
+}
+.userInfoList{
+    padding: 0;
+    list-style: none;
+
+}
+.userAvatar{
+    display: flex;
+    margin: 5px 0 10px;
+}
+.userAvatarInner{
+
+}
+.userAvatarImg{
+    width: 150px;
+    height: 150px;
+    border-radius: 60%;
+}
+.userControls{
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    left: 170px
+}

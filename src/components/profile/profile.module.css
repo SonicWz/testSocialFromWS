@@ -1,0 +1,41 @@
+.userProfile{
+	padding: 0;
+    background: #fff;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+.userCard{
+    padding: 10px 0 20px;
+    padding-left: 40px;
+    font-size: 1em;
+    line-height: 1.5em;
+    border-bottom: 1px solid #ccc
+}
+.userCardRow{
+    margin: 5px 0;
+}
+.userStatus{
+    margin-left: 5px;
+    color: #1677ff;
+    cursor: pointer;
+}
+.profileAvatarWrap{
+
+}
+.profileAvatar{
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px transparent, 0 0 13px transparent;
+}
+
+@media all and (max-width: 768px) {
+    .userCard {
+        padding: 15px 5px 25px;
+        text-align: center;
+    }
+    .userProfile{
+        margin: 0;
+    }
+    .profileAvatarWrap{
+        text-align: center;
+    }
+}

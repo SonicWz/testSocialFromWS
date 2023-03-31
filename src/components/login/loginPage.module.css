@@ -1,0 +1,20 @@
+.authFormWrap{
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+.authForm{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+}
+.authFormTitle{
+    color: #fff
+}
+@media all and (max-width: 768px) {
+    .authForm {
+        width: auto;
+    }
+}

@@ -1,0 +1,148 @@
+import {PhotosType, UsersType} from "../types/types";
+import usersReducer, {follow, onFollow, unfollow} from "./users_reducer";
+import {InitialStateType} from "./users_reducer";
+
+let state: InitialStateType;
+
+beforeEach(() => {
+    state = {
+        users : [
+            {
+                "name": "alukard1",
+                "id": 1,
+                "uniqueUrlName": "str",
+                "photos": {
+                    "small": "https://cs13.pikabu.ru/avatars/3425/x3425772-1402976383.png",
+                    "large": "large"
+                },
+                "location": {
+                    "country": "string",
+                    "city": "string"
+                },
+                "status": "tree",
+                "followed": false,
+                "fullName": "string",
+            },
+            {
+                "name": "alukard",
+                "id": 26095,
+                "uniqueUrlName": "str",
+                "photos": {
+                    "small": "str",
+                    "large": "str"
+                },
+                "location": {
+                    "country": "string",
+                    "city": "string"
+                },
+                "status": "str",
+                "followed": false,
+                "fullName": "string",
+            },
+            {
+                "name": "lemming",
+                "id": 26094,
+                "uniqueUrlName": "str",
+                "photos": {
+                    "small": "str",
+                    "large": "str"
+                },
+                "location": {
+                    "country": "string",
+                    "city": "string"
+                },
+                "status": "str",
+                "followed": true,
+                "fullName": "string"
+            },
+            {
+                "name": "Kate4658",
+                "id": 26093,
+                "uniqueUrlName": "str",
+                "photos": {
+                    "small": "str",
+                    "large": "str"
+                },
+                "fullName": "string",
+                "location": {
+                    "country": "string",
+                    "city": "string"
+                },
+                "status": "str",
+                "followed": false
+            },
+            {
+                "name": "foster24",
+                "id": 26092,
+                "uniqueUrlName": "str",
+                "fullName": "string",
+                "photos": {
+                    "small": "str",
+                    "large": "str"
+                },
+                "location": {
+                    "country": "string",
+                    "city": "string"
+                },
+                "status": "str",
+                "followed": true
+            }
+
+        ],
+            pageSize: 5 as number,
+        totalUsersCount: 0 as number,
+        currentPage: 1 as number,
+        portionNumber: 1 as number,
+        isFetching: true,
+        followingInProgress: [],
+        filterName: '',
+        filterCity: '',
+        filterIsFollowed: null
+    };
+});
+
+test('followFromUnfollowed', () => {
+    let user = {
+        "name": "Kate4658",
+        "id": 26095,
+        "uniqueUrlName": "str",
+        "photos": {
+            "small": "str",
+            "large": "str"
+        },
+        "fullName": "string",
+        "location": {
+            "country": "string",
+            "city": "string"
+        },
+        "status": "str",
+        "followed": true
+    }
+    let newState = usersReducer(state, follow(user));
+
+    expect(newState.users[0].followed).toBeFalsy();
+    expect(newState.users[1].followed).toBeTruthy();
+
+})
+
+test('unFollowFromFollowed', () => {
+    let user = {
+        "name": "Kate4658",
+        "id": 26094,
+        "uniqueUrlName": "str",
+        "photos": {
+            "small": "str",
+            "large": "str"
+        },
+        "location": {
+            "country": "string",
+            "city": "string"
+        },
+        "status": "str",
+        "followed": true
+    }
+    let newState = usersReducer(state, unfollow(user));
+    expect(newState.users[0].followed).toBeFalsy();
+    expect(newState.users[2].followed).toBeFalsy();
+
+})

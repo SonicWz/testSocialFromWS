@@ -1,0 +1,47 @@
+import {PhotosType, UsersType, UserType} from "../types/types";
+import usersReducer, {follow, onFollow, unfollow} from "./users_reducer";
+import {InitialStateType} from "./users_reducer";
+import {usersAPI} from "../api/usersAPI";
+jest.mock("../api/usersAPI"); //мокаем апи (usersAPI становится фейковой)
+const UserAPIMock = usersAPI;
+const result = {
+    resultCode: 200,
+    messages: [],
+    data: {}
+}
+
+//запросе метода getUserData возвращай в ответ result
+// @ts-ignore
+UserAPIMock.getUserData.mockReturnValue(result);
+
+//Testing of thunk
+test('onFollowThunk', () => {
+    let user = {
+        "name": "alukard1",
+        "id": 1,
+        "uniqueUrlName": "str",
+        "photos": {
+            "small": "https://cs13.pikabu.ru/avatars/3425/x3425772-1402976383.png",
+            "large": "large"
+        },
+        "location": {
+            "country": "string",
+            "city": "string"
+        },
+        "status": "tree",
+        "followed": false
+    }
+    //создаем санку
+    const thunk = onFollow(user);
+    //создаем мок диспатча
+    // @ts-ignore
+    const dispatchMock = jest.fn(usersAPI);
+
+    //запускаем
+    // @ts-ignore
+    thunk(dispatchMock);
+
+    //ожидаем что санка выполнилась несколько раз (сколько есть dispatch в этой санке)
+    expect(dispatchMock).toBeCalledTimes(3);
+
+})

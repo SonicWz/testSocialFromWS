@@ -1,0 +1,22 @@
+.usersWrap{
+    margin-left: 10px;
+}
+.usersFiltersWrap{
+
+}
+.filterTitle{
+    color: #fff
+}
+.preloaderWrap{
+    position: relative;
+}
+
+@media all and (max-width: 768px) {
+    .usersWrap{
+        margin: 0;
+    }
+    .usersFiltersWrap{
+        padding: 0 10px;
+        text-align: center;
+    }
+}

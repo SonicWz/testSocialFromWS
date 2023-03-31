@@ -1,0 +1,176 @@
+.dialogsWrap{
+	display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    min-height: 300px;
+}
+.dialogs{
+	width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+    margin-left: 10px;
+}
+.dialogs__inner{
+	display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    min-height: 60vh;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.dialogs__userWrap{
+    background: #fff;
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+    border-radius: 5px 0 0 5px;
+    border-right: 1px solid #ccc;
+}
+.dialogs__messagesInner{
+    text-align: center;
+}
+.dialogs__messagesWrap{
+    width: 100%;
+    border: 0;
+    border-radius: 0 5px 5px 0;
+    background: #fff;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 10px 20px;
+}
+.dialogs__messagesInner{
+
+}
+.dialogs__message{
+
+}
+.dialogs__user{
+    font-size: 1em;
+    margin: 0px;
+    border-bottom: 1px solid #ccc;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding: 20px 20px;
+    cursor: pointer;
+}
+.dialogs__user:last-child{
+    border-bottom: none
+}
+
+.dialogs__user_active{
+    background: #70a0ce;
+    color: #fff
+}
+.userlink{
+    text-decoration: underline;
+    color: #000
+}
+.dialogs__user_active .userlink{
+    color: #fff
+}
+.userAvatarWrap{
+    margin: 0 5px;
+}
+.userAvatar{
+    width: 40px;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 0 3px transparent, 0 0 13px transparent;
+}
+.dialogs__user_active .userAvatar {
+    box-shadow: 0 0 0 3px transparent, 0 0 13px #f5f5f5;
+}
+.dialogs__userLink{
+	cursor: pointer;
+    padding: 5px 5px;
+    display: block;
+    margin-left: 8px;
+    text-align: left;
+}
+.dialogs__controls{
+    width: 70%;
+}
+.addNewMessageForm{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.addNewMessageField{
+
+}
+.addNewMessageButton{
+    margin: 0 5px;
+}
+.dialogs__message{
+    display: flex;
+    flex-direction: row;
+    margin: 5px 0;
+}
+.dialogs__message.ownMessage{
+
+}
+.messageWrap{
+    display: flex;
+}
+.ownMessageWrap{
+    flex-direction: row-reverse;
+}
+
+.message{
+    display: flex;
+    position: relative;
+    padding: 10px;
+    margin: 5px 0 0;
+    background: #70a0ce;
+    color: #fff;
+    border-radius: 5px;
+}
+.dialogs__message.ownMessage .message{
+    background: #63b563;
+}
+.messageText{
+    text-align: center;
+    font-size: 1em;
+}
+.editMessageButton, .deleteMessageButton{
+    cursor: pointer;
+    transform: scale(1.0);
+    transition: all 0.2s ease;
+    margin: 0 5px;
+}
+.editMessageButton{
+
+}
+.deleteMessageButton{
+
+}
+.editMessageButton:hover, .deleteMessageButton:hover{
+    transform: scale(1.1);
+}
+
+@media all and (max-width: 768px) {
+    .dialogs {
+        width: 100%;
+        margin-left: 0;
+        margin-bottom: 0;
+    }
+    .dialogs__userWrap{
+        width: 40%;
+    }
+    .dialogs__user{
+        padding: 15px 0;
+    }
+
+}

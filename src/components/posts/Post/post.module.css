@@ -1,0 +1,62 @@
+.post{
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	padding: 10px 20px;
+	margin: 10px 0 0;
+	background: #fff;
+	display: flex;
+	justify-content: space-between;
+}
+.postInner{
+	flex-grow: 1;
+	padding: 5px 15px 15px;
+}
+.postTitle{
+	line-height: 1.5em;
+	font-size: 1.4em;
+	text-align: center;
+}
+.postMessage{
+	line-height: 1.5em;
+	font-size: 1em;
+
+}
+.likeCount{
+	font-size: 1.1em;
+	cursor: pointer;
+	display: inline-block;
+	transform: scale(1);
+	transition: transform 0.1s ease;
+}
+.likeCount:hover{
+	transform: scale(1.1);
+	transition: transform 0.3s ease;
+}
+
+.post__controls{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+.deleteMessageButton{
+	display: flex;
+}
+.editMessageButton, .deleteMessageButton{
+	cursor: pointer;
+	transition: all 0.2s ease;
+	margin: 0 5px;
+	transform: scale(1.2);
+}
+.editMessageButton:hover, .deleteMessageButton:hover{
+	transform: scale(1.4);
+}
+
+@media all and (max-width: 768px) {
+	.post{
+		flex-direction: column;
+	}
+	.post__controls{
+		justify-content: flex-end;
+	}
+}

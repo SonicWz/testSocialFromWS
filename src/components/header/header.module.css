@@ -1,0 +1,51 @@
+.header{
+    grid-area: header;
+    background: #4282D3;
+    color: #fff;
+    line-height: 1.5em;
+    font-size: 1em;
+    min-height: 100%;
+}
+.container{
+    max-width: 1050px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+.headerInner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logoWrap{
+
+}
+.logo{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+.loginWrap{
+    display: flex;
+    flex-direction: column;
+}
+
+.login_link{
+    color: #fff;
+    text-decoration: underline;
+}
+.login, .email, .id{
+    color: #fff;
+}
+.buttonLogOutWrap{
+
+}
+.buttonLogOut{
+    margin: 10px 0;
+}
+
+@media all and (max-width: 768px) {
+    .headerInner{
+        padding: 5px 5px;
+    }
+}
