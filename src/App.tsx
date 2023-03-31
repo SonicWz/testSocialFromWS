@@ -80,7 +80,7 @@ const App: React.FC<AppPropsType> = (props) => {
                                         <section className="content">
                                             <Routes>
                                                 <Route path="/" element={
-                                                    <LoginPage /> //попробовать withSuspense(Component)
+                                                    <LoginPage />
                                                 }
                                                 />
                                                 <Route path="/login" element={<LoginPage />}
